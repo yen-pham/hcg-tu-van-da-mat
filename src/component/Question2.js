@@ -15,7 +15,7 @@ class Question2 extends Component {
           <label htmlFor="_D1" className= "tick">
             <div id="tick_mark" />
           </label>
-          <label htmlFor="_D1" className="content">Da hỗ hợp</label>
+          <label htmlFor="_D1" className="content">Da hỗn hợp</label>
           <p>Một sự kết hợp của hai loại da: da bình thường đến da khô và da dầu, da mụn. Da hỗn hợp tỏa sáng và có xu hướng phát triển các nhược điểm nhỏ - đặc biệt là trong vùng gọi là T-zone giữa trán, mũi và cằm. Ngược lại, khu vực má là bình thường đến khô.</p>
 
         </div>

@@ -3,7 +3,7 @@ import "./Question.css";
 
 class Question1 extends Component {
   check = (val) => {
-    this.props.getData('V',val);
+    this.props.getData("V", val);
   };
   render() {
     return (
@@ -81,7 +81,7 @@ class Question1 extends Component {
             <div id="tick_mark" />
           </label>
           <label htmlFor="_V4" className="content">
-            Dưỡng da
+            Trị mụn,thâm sẹo
           </label>
         </div>
         <div className="reply">
@@ -96,7 +96,7 @@ class Question1 extends Component {
             <div id="tick_mark" />
           </label>
           <label htmlFor="_V5" className="content">
-            Trị mụn,thâm sẹo
+            Ngừa lão hóa
           </label>
         </div>
       </div>

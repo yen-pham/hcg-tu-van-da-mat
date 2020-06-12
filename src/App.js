@@ -8,6 +8,7 @@ import Home from "./component/Home";
 import sanPham from "./connectFirebase/Connect";
 import Question6 from "./component/Question6";
 import Admin from "./component/Admin";
+import TableProduct from "./component/TableProduct";
 
 class App extends Component {
   constructor(props) {
@@ -44,7 +45,7 @@ class App extends Component {
   componentDidMount = () => {
     // this.tuVan('V11','D1','T1','M1','L1','X1');
   };
-  getData = (type, value) => {
+  getData = (type, value) => { //'V','V11'
     let tieuChi = this.state.tieuChi;
     tieuChi[type] = value;
     this.setState({ tieuChi: tieuChi });
@@ -52,7 +53,7 @@ class App extends Component {
   };
   tuVan = () => {
     // console.log("aaa");
-
+// V11 D1 T1 M1 L1 X1
     let result = [];
     this.state.sanPham.map((value, key) => {
       if (value.tieuChi.V == this.state.tieuChi.V) {
@@ -66,7 +67,17 @@ class App extends Component {
                       // console.log(x);
 
                       if (value.tieuChi.X == x) {
-                        result.push(value);
+                        // console.log(result);
+                        
+                        if(result.length!=0){
+                          result.map((item,key)=>{
+                          if(item!==value){
+                              if(key== result.length-1) {result.push(value);}
+                          }
+                        })
+                        } else {result.push(value);}
+                        
+                        
                       }
                     });
                   }
@@ -91,7 +102,9 @@ class App extends Component {
 
     return (
       <div className="App">
+        
         <Header />
+        {/* <TableProduct sanPham={this.state.sanPham}/> */}
         {/* <Question6/> */}
         {/* <button onClick={() => this.tuVan("V2", "D2", "T2", "M2", "L2", "X2")}>
           Show kq
@@ -112,6 +125,7 @@ class App extends Component {
             }}
           />
             <Route path="/admin" component={Admin}/>
+            <Route  path="/san-pham" render={()=>{return  <TableProduct sanPham={this.state.sanPham}/>}}/>
           <Route path="/ket-qua-tu-van" render={()=>{return <Advisory dsSanPham={this.state.ketQua}/>}} />
         </Router>
         
